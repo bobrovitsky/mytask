@@ -1,0 +1,32 @@
+﻿<html>
+	<head>
+		<title>mytask</title>
+		<style>
+			tr { background:#FFF;}
+			td, span { padding: 5px; font-family: tahoma; font-size: 12px;}
+			table { background: #CCC }
+		</style>
+	</head>
+	<body>
+		<br>
+		<center>
+			{% for profile in profile_list %}
+			<table border="0" cellspacing="1" cellpadding="0">				
+				<tr>
+					<td><b>Name</b></td>
+					<td>{{profile}}</td>
+				</tr>
+				<tr>
+					<td><b>Address</b></td>
+					<td colspan="2">{{profile.address}}</td>
+				</tr>
+				<tr>
+					<td><b>Description</b></td>
+					<td colspan="2">{{profile.description}}</td>
+				</tr>
+			</table>
+			<br>
+			{% endfor %}
+		</center>
+	</body>
+</html>
