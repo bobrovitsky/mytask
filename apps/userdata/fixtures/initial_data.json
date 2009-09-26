@@ -8,15 +8,5 @@
 			"description": "several words about me",
 			"address": "Ukraine, Nikoleav, Uzhnaja 47/28"
         }
-    },
-	{
-        "pk": "2",
-        "model": "userdata.Profile",
-        "fields": {
-            "first_name": "Dmitry",
-            "last_name": "Bobrovitsky",
-			"description": "several words about me",
-			"address": "Ukraine, Nikoleav, Uzhnaja 47/28"
-        }
     }
 ]
