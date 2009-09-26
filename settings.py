@@ -73,6 +73,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
+	'querylog.middleware.QueryMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -95,4 +96,5 @@ INSTALLED_APPS = (
 	'django.contrib.sessions',
     'django.contrib.contenttypes',
 	'userdata',
+	'querylog',
 )
