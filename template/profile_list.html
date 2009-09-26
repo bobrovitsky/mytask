@@ -10,6 +10,7 @@
 	<body>
 		<br>
 		<center>
+		{% block content %}
 			{% for profile in profile_list %}
 			<table border="0" cellspacing="1" cellpadding="0">				
 				<tr>
@@ -27,6 +28,7 @@
 			</table>
 			<br>
 			{% endfor %}
+		{% endblock %}
 		</center>
 	</body>
 </html>
