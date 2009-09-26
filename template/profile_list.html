@@ -28,6 +28,14 @@
 			</table>
 			<br>
 			{% endfor %}
+			
+			{% if user.is_authenticated %}
+			<span>
+				<a href="/">profiles</a> |
+				<a href="/logout/">logout</a>
+			</span>
+			{% endif %}
+			
 		{% endblock %}
 		</center>
 	</body>

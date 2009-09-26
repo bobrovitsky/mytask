@@ -15,3 +15,9 @@ urlpatterns += patterns('',
 		'template_name':'login.html'}
 	)
 )
+
+urlpatterns += patterns('',
+	url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', {
+		'login_url':'/login/'}
+	)
+)
