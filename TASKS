@@ -6,7 +6,7 @@
 
 2. auth Додати авторизацію цієї сторінки - 1 година (1 година)
 
-3. middleware Зробити middleware що зберігає всі запити в базу - 30 хвилин
+3. middleware Зробити middleware що зберігає всі запити в базу - 30 хвилин (20 хвилин)
 
 4. template context створити template-context-processor який додає
 django.settings в контекст - 15 хвилин (5 хвилин)

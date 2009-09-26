@@ -8,36 +8,38 @@
 		</style>
 	</head>
 	<body>
-		<br>
-		<center>
+		<br><center>		
+		{% if user.is_authenticated %}
+			<span>
+				<a href="/">profiles</a> |
+				<a href="/querylog/">querylog</a> |
+				<a href="/logout/">logout</a>
+			</span>
+			<br><br>
+		{% endif %}		
+		
 		{% block content %}
 			{% for profile in profile_list %}
 			<table border="0" cellspacing="1" cellpadding="0">				
 				<tr>
 					<td><b>Name</b></td>
 					<td>{{profile}}</td>
+					<td rowspan="3">
+						<a href="{{profile.get_absolute_url}}">edit</a>
+					</td>
 				</tr>
 				<tr>
 					<td><b>Address</b></td>
-					<td colspan="2">{{profile.address}}</td>
+					<td>{{profile.address}}</td>
 				</tr>
 				<tr>
 					<td><b>Description</b></td>
-					<td colspan="2">{{profile.description}}</td>
+					<td>{{profile.description}}</td>
 				</tr>
 			</table>
 			<br>
-			{% endfor %}
-			
-			{% if user.is_authenticated %}
-			<span>
-				<a href="/">profiles</a> |
-				<a href="/querylog/">querylog</a> |
-				<a href="/logout/">logout</a>
-			</span>
-			{% endif %}
-			
-		{% endblock %}
+			{% endfor %}									
+		{% endblock %}				
 		</center>
 	</body>
 </html>
