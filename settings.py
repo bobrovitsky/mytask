@@ -74,6 +74,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'urls'
+LOGIN_URL = '/login/'
 
 TEMPLATE_DIRS = (
 	os.path.join(PROJECT_ROOT, 'template')
@@ -84,7 +85,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 FIXTURE_DIRS = (
-	PROJECT_ROOT + '/apps/userdata/fixtures/',
+	PROJECT_ROOT + '/apps/userdata/fixtures',
 )
 
 INSTALLED_APPS = (
