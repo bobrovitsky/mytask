@@ -1,0 +1,11 @@
+﻿{% extends 'profile_list.html' %}
+{% block content %}
+	<table border="0" cellspacing="1" cellpadding="0">				
+		{% for query in query_list %}
+		<tr>
+			<td>{{query.time}}</td>
+			<td>{{query.sql}}</td>
+		</tr>
+		{% endfor %}
+	</table>	
+{% endblock %}
