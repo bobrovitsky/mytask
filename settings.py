@@ -77,7 +77,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'urls'
+
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATE_DIRS = (
 	os.path.join(PROJECT_ROOT, 'template')

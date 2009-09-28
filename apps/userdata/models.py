@@ -7,6 +7,7 @@ class Profile(models.Model):
 	last_name = models.CharField(_('last name'), max_length=30)
 	address = models.CharField(_('address'), max_length=255)
 	description = models.TextField(_('description'))
+	birthday = models.DateField(_('birthday'))
 	
 	def __unicode__(self):
 		return '%s %s' % (self.first_name, self.last_name)

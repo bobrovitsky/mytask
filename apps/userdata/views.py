@@ -21,7 +21,7 @@ def profile_edit(request, pid):
 			form.save(commit=True)
 	else:
 		form = ProfileForm(instance=profile)
-		print form
+		print form.fields.keys()
 	return {
 		'form': form
 	}
