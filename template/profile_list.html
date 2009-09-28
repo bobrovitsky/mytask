@@ -1,4 +1,5 @@
-﻿<html>
+﻿{% load admin_edit %}
+<html>
 	<head>
 		<title>mytask</title>
 		<style>
@@ -25,7 +26,8 @@
 					<td><b>Name</b></td>
 					<td>{{profile}}</td>
 					<td rowspan="4">
-						<a href="{{profile.get_absolute_url}}">edit</a>
+						<a href="{{profile.get_absolute_url}}">normal edit</a>
+						<br>{% admin_edit profile %}
 					</td>
 				</tr>
 				<tr>
