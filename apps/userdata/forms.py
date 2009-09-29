@@ -1,14 +1,19 @@
+''' forms definition  '''
 from django import forms
-from models import Profile
-from widgets import DatePicker
+from apps.userdata.models import Profile
+from apps.userdata.widgets import DatePicker
+
 
 class ProfileForm(forms.ModelForm):
-	birthday = forms.DateField(required=True, widget=DatePicker)
+    ''' profile form with custum DatePicker widget '''
 
-	def __init__(self, *args, **kwargs):
-		super(ProfileForm, self).__init__(*args, **kwargs)
-		self.fields.keyOrder.reverse()
+    birthday = forms.DateField(required=True, widget=DatePicker)
 
-	class Meta:
-		model = Profile
+    def __init__(self, *args, **kwargs):
+        ''' redefine init method to change fields order '''
+        super(ProfileForm, self).__init__(*args, **kwargs)
+        self.fields.keyOrder.reverse()
 
+    class Meta:
+        ''' make form from model Profile '''
+        model = Profile

@@ -12,6 +12,7 @@ urlpatterns += patterns('',
 
 urlpatterns += patterns('',
 	url(r'^querylog/$', 'querylog.views.query_list'),
+	url(r'^modellog/$', 'modellog.views.modellog_list'),
 )
 
 urlpatterns += patterns('',

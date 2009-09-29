@@ -64,8 +64,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.debug',
 	'django.core.context_processors.i18n',
 	'django.core.context_processors.media',
-	'userdata.context_processors.settings',
-	'userdata.context_processors.user'
+	'userdata.context_processors.settings_context',
+	'userdata.context_processors.user_context'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,4 +99,5 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
 	'userdata',
 	'querylog',
+	'modellog',
 )

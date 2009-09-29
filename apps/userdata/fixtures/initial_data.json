@@ -5,9 +5,9 @@
         "fields": {
             "first_name": "Dmitry",
             "last_name": "Bobrovitsky",
-			"description": "several words about me",
-			"address": "Ukraine, Nikoleav, Uzhnaja 47/28",
-			"birthday": "1981-05-29"
+            "description": "several words about me",
+            "address": "Ukraine, Nikoleav, Uzhnaja 47/28",
+            "birthday": "1981-05-29"
         }
     }
 ]

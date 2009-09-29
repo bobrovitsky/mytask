@@ -1,0 +1,13 @@
+﻿{% extends 'profile_list.html' %}
+{% block content %}
+	<table border="0" cellspacing="1" cellpadding="0">				
+		{% for log in modellog_list %}
+		<tr>
+			<td>{{log.model}}</td>
+			<td>{{log.object}}</td>
+			<td>{{log.action_as_string}}</td>
+			<td>{{log.date}}</td>
+		</tr>
+		{% endfor %}
+	</table>	
+{% endblock %}
