@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from django.db.models.loading import get_models
 from django.db.models.signals import post_save, post_delete
-from apps.querylog.models import Log
+from apps.querylog.models import QueryLog
 
 ACTIONS = (
     (1, _('create')),
@@ -14,7 +14,7 @@ ACTIONS = (
 
 class ModelLog(models.Model):
     ''' model to store models actions '''
-    model = models.CharField(_('model'), max_length=50)
+    model_name = models.CharField(_('model'), max_length=50)
     # why not int? because pk may be a string
     object = models.CharField(_('object'), max_length=255)
     action = models.IntegerField(_('action'), choices=ACTIONS)
@@ -23,7 +23,7 @@ class ModelLog(models.Model):
     def __unicode__(self):
         ''' log description '''
         return (_('model=%s, object=%s, action=%s, date=%s'),
-            self.model, self.object, self.action, self.date)
+            self.model_name, self.object, self.action, self.date)
 
     def action_as_string(self):
         ''' return action as string instead of number '''
@@ -33,8 +33,8 @@ class ModelLog(models.Model):
 def create_modellog(sender, instance, action):
     ''' create new modellog record'''
     ModelLog.objects.create(
-        model=sender.__name__,
-        object = str(instance.pk),
+        model_name=sender.__name__,
+        object = str(instance.pk)[:255],
         action=action)
 
 
@@ -50,6 +50,6 @@ def delete_model(sender, instance, **kwargs):
 
 
 for model in get_models():
-    if model not in (Log, ModelLog):
+    if model not in (QueryLog, ModelLog):
         post_save.connect(update_model, sender=model)
         post_delete.connect(delete_model, sender=model)

@@ -1,6 +1,6 @@
 ''' querylog middleware '''
 from django.db import connection
-from apps.querylog.models import Log
+from apps.querylog.models import QueryLog
 
 
 class QueryMiddleware(object):
@@ -10,5 +10,5 @@ class QueryMiddleware(object):
         ''' call view, save queries and return response '''
         response = func(request, *args, **kwargs)
         for query in connection.queries[:]:
-            Log.objects.create(sql=query['sql'], time=query['time'])
+            QueryLog.objects.create(sql=query['sql'], time=query['time'])
         return response

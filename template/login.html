@@ -1,6 +1,10 @@
 ﻿{% extends 'profile_list.html' %}
-{% block content %}
 
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+{% block content %}
 	{% if form.errors %}
 		<span style="color:red">
 			{% for field in form %}
@@ -27,7 +31,7 @@
 			<td>{{form.password}}</td>
 		</tr>
 		<tr>
-			<td align="right" colspan="2"><input type="submit" value="login"></td>
+			<td align="right" colspan="2"><input type="submit" name="login" value="login"></td>
 		</tr>
 	</table>
 	</form>

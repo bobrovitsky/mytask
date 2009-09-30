@@ -11,18 +11,18 @@ urlpatterns += patterns('',
 )
 
 urlpatterns += patterns('',
-	url(r'^querylog/$', 'querylog.views.query_list'),
-	url(r'^modellog/$', 'modellog.views.modellog_list'),
+	url(r'^querylog/$', 'querylog.views.query_list', name='querylog_list'),
+	url(r'^modellog/$', 'modellog.views.modellog_list', name='modellog_list'),
 )
 
 urlpatterns += patterns('',
-	url(r'^login/$', 'django.contrib.auth.views.login', {
-		'template_name':'login.html'}
+	url(r'^login/$', 'django.contrib.auth.views.login', 
+        {'template_name':'login.html'}, name='login'
 	)
 )
 
 urlpatterns += patterns('',
-	url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', {
-		'login_url':'/login/'}
+	url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', 
+        {'login_url':'/login/'}, name='logout',
 	)
 )

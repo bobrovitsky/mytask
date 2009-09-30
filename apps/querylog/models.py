@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext as _
 
 
-class Log(models.Model):
+class QueryLog(models.Model):
     ''' Log model '''
 
     sql = models.TextField(_('query'))

@@ -1,10 +1,12 @@
 ﻿{% extends 'profile_list.html' %}
-{% block content %}
 
-<link href="/static/styles/datePicker.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/scripts/jquery.js"></script>
-<script type="text/javascript" src="/static/scripts/date.js"></script>
-<script type="text/javascript" src="/static/scripts/jquery.datePicker.js"></script>
+{% block title %}
+<title>profile edit</title>
+{% endblock %}
+
+
+{% block content %}
+{{form.media}}
 
 	{% if form.errors %}
 		<span style="color:red">

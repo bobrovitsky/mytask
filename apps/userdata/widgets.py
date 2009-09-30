@@ -12,8 +12,11 @@ class DatePicker(TextInput):
 
     class Media:
         ''' define js and css '''
-        css = {'all': ('/static/datePicker.css', ), }
-        js = ('/static/date.js', '/static/jquery.datePicker.js', )
+        css = {'all': ('/static/styles/datePicker.css', ), }
+        js = ('/static/scripts/jquery.js',
+            '/static/scripts/date.js',
+            '/static/scripts/jquery.datePicker.js',
+            )
 
     def render_template(self, name, text):
         ''' render full widget template '''
